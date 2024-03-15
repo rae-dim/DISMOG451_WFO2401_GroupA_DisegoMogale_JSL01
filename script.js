@@ -7,18 +7,20 @@ let validYear = false
 let validPetNamed = false
 let current_year = new Date().getFullYear()
 
-function validateSyntax() { 
+function validateSyntax(input) { 
     //split the srting input
     const pet = input.innerText.substring(0, 4);
     const year = input.innerText.substring(4, 8);
     const petName = input.innerText.substring(8);
-    
+
     if (pet === 'pet_'){
         validPet = true
     }
+
     function yearValidation(year) {
         // Regular expression to match only digits
-            if (year != /^[0-9]+$/;){
+           let regex =  /^[0-9]+$/;
+            if(!RegExp.test(year)) {
             return false
             }
             // Check if year length is not equal to 4
@@ -35,28 +37,16 @@ function validateSyntax() {
             // Year is valid
             return true;
     }
-    if (yearValidation(year) = true){
-        validYear = true
-    }
+    validYear = yearValidation(year)
+    let petNameRegex = /^([A-Z]{1}[a-z]{2,30})/;
 
-    if (petName != /^([A-Z]{1}[a-z]{2,30})/){
+    if (petNameRegex.test(petName) ){
     validPetNamed = true;
 }
-
-
-    /* if (input.value == `
-    pet_ + RegExp([\w-])
-    `){
-        validPetName = true;
-        result = input;
-    } else {
-        alert("This is not a valid adoption code")
-    }*/
-
-    // TODO: Write your validation logic here
-        // Check if input starts with 'pet_' and followed by alphanumeric characters
-debugger;
-            document.getElementById('result').innerText = result;
-                validPetName=true
 }
 
+validPetName = validateSyntax(input)
+
+if (result != validPetName){
+    alert("Given pet code is invalidd, follow syntax guidlines provided")
+}
