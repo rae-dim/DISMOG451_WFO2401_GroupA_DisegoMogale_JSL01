@@ -38,7 +38,7 @@ function validateSyntax(input) {
     }
     validYear = yearValidation(year)
 
-    let petNameRegex = /^([A-Z]{1}[a-z]{2,30})/;
+    let petNameRegex = /^([A-Z]{1}[a-z]{2,30})/i;
 
     if (petNameRegex.test(petName) ){
     validPetNamed = true;
