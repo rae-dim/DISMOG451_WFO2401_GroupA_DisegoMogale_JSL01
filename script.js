@@ -10,7 +10,7 @@ function validSyntax() {
 const inputElement = document.getElementById('petInput');
 inputElement.addEventListener('change', () => {
     if (!validSyntax()) {
-        result.textContent= "Ivnalid Syntax" + '\u{1f62c}' ;
+        result.textContent= "Invalid Syntax" + '\u{1f62c}' ;
     } else {
        result.textContent ="Valid Syntax" + '\u{1F604}';
     }
