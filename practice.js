@@ -18,7 +18,7 @@ function validateSyntax(){
     }
 
     function yearValidation(input) {
-        let validYear = true //!is this line at all necessary?
+        let validYear = true 
         const input_year = input.substring(4, 8);
 
             // Regular expression to match only digits
@@ -36,7 +36,6 @@ function validateSyntax(){
                 if (year < 1900 || year > current_year) {
                 validYear = false;
                 } 
-                    //!! How do i bring back tah variable validYyear into the function, not sure where to put it in order to validate it
                 return validYear;
                 // Year is valid
                 
@@ -47,7 +46,7 @@ function validateSyntax(){
         let validPetNamed= false
         const petName = input.substring(8);
         //Regular Expression Ussed to check that the Pet Name starts with capital letters followed by a series of small letters
-        let petNameRegex = /^([A-Z]{1}[a-z]{2,30})/;
+        let petNameRegex = /^([A-Z]{1}[a-z]{2,30})/i;
 
         if (petNameRegex.test(petName) ){
         validPetNamed = true;
